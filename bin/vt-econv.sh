@@ -8,7 +8,7 @@ _keep=false
 if test $# -gt 1 ; then
   while getopts khi: opt; do
     case "$opt" in
-      i) _input=$OPTARG;;
+      i) _inp=$OPTARG;;
       k) _keep=true;;
       h) echo "Usage: $(basename $0) [-k] [-i input]"; exit 1;;
     esac
@@ -32,7 +32,8 @@ awk '/^ *[0-9]+ *F=/{gsub(/=/,"",$8);printf "%4d %12.6f %12.6f %21.9f\n",$1,$3,$
 
 # plot --------------------------------------------------------------------------
 cat > ${plt} << EOF
-set title "${inp}"
+set term x11
+set title "Energy Convergence - ${inp}"
 set xlabel "Step"
 set ylabel "Energy [eV]"
 set pointsize 2
