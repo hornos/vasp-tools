@@ -30,7 +30,7 @@ ${CAT} "${inp}" | \
 awk 'BEGIN{step=0} /^ *total drift:/{++step;printf "%3d  0.0 0.0 0.0   %12.6f %12.6f %12.6f\n",step,$3,$4,$5}' \
 > ${dat}
 
-lines=$(${CAT} "${dat}" | wc -l)
+lines=$(cat "${dat}" | wc -l)
 
 # plot --------------------------------------------------------------------------
 cat > ${plt} << EOF
