@@ -1,7 +1,7 @@
 #!/bin/bash
 
 CAT=cat
-GPLOT=gunplot
+GPLOT=gnuplot
 
 _inp="${1:-OSZICAR}"
 inp=${_inp%%.gz}
